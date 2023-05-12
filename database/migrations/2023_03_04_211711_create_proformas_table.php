@@ -20,7 +20,7 @@ class CreateProformasTable extends Migration
             $table->text('les_taches_id');
             $table->string('budjet');
             $table->timestamps();
-            $table->timestamps();
+
         });
     }
 

@@ -27,5 +27,18 @@ class Projet extends Model
     {
         return $this->hasmany(Tache::class);
     }
-    
+
+
+    public function graphisme()
+    {
+        return $this->belongTo(Graphisme::class);
+    }
+    public function user()
+    {
+        return $this->belongTo(User::class);
+    }
+    public function proforma()
+    {
+        return $this->belongTo(Proforma::class);
+    }
 }

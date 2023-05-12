@@ -36,6 +36,13 @@ class TacheController extends Controller
     public function store(Request $request)
     {
         //
+        $taches =new Tache();
+        $taches->nomT =$request->nomT;
+        $taches->descriptionT =$request->descriptionT;
+        $taches->budjetT =$request->budjetT;
+        $taches->date_debut =$request->date_debut;
+        $taches->save();
+
     }
 
     /**
@@ -47,6 +54,8 @@ class TacheController extends Controller
     public function show(Tache $tache)
     {
         //
+        $tache= tache::all();
+        return view("", compact('tache'));
     }
 
     /**

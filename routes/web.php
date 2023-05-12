@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\ProjetController;
+use App\Http\Controllers\TacheController;
+use App\Http\Controllers\GraphismeController;
+use App\Http\Controllers\ConnexionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +31,33 @@ Route::get('/user', function () {
 
 Route::get('/connexion', function () {
     return view('auth.login');
+});
+
+
+Route::controller(ConnexionController::class)->group(function () {
+    Route::get('/connexionPage', 'index');
+    Route::get('/inscriptionPage', 'create');
+    // utilise middleware
+    Route::post('/connexion', 'store');
+
+    Route::post('/modificationUtilisateur', 'update');
+    Route::post('/suppressionUtilisateur', 'create');
+    Route::get('/listeUtilisateur/{id}', 'show');
+
+});
+
+Route::post('inscription/store',   [ConnexionController::class, 'store2']);
+
+Route::controller(ProjetController::class)->group(function () {
+    Route::get('/addProjet', 'index');
+    Route::post('/projetStore', 'store');
+    Route::post('/delectprojet', 'delete');
+
+});
+
+Route::controller(TacheController::class)->group(function () {
+    Route::get('/addTache', 'index');
+    Route::post('/tacheStore', 'store');
+    Route::post('/delectetache', 'delete');
+
 });

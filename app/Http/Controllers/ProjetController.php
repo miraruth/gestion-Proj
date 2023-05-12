@@ -14,7 +14,7 @@ class ProjetController extends Controller
      */
     public function index()
     {
-        
+        return view('projet.addproject');
     }
 
     /**
@@ -35,7 +35,17 @@ class ProjetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //enregistrement du projet
+
+        $projets= new Projet();
+        $projets->nomP= $request->nomP;
+        $projets->descriptionP= $request->descriptionP;
+        $projets->budjetP= $request->budjetP;
+        $projets->date_debut= $request->date_debut;
+        $projets->date_fin= $request->date_fin;
+        $projets->save();
+
+
     }
 
     /**
@@ -46,7 +56,8 @@ class ProjetController extends Controller
      */
     public function show(Projet $projet)
     {
-        //
+        $projets = Projet::all();
+        return view("projet.showproject", compact('projets'));
     }
 
     /**
@@ -78,8 +89,10 @@ class ProjetController extends Controller
      * @param  \App\Models\Projet  $projet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projet $projet)
+    public function destroy($id)
     {
-        //
+        $projets =Projet::find($id);
+        $projets->delete();
+        return view();
     }
 }

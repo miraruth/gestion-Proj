@@ -21,8 +21,27 @@ class Tache extends Model
         'date_fin',
     ];
 
-    public function documents()
+
+
+
+    
+    public function graphisme()
     {
-        return $this->hasmany(Document::class);
+        return $this->belongTo(Graphisme::class);
+    }
+
+    public function proforma()
+    {
+        return $this->belongTo(Proforma::class);
+    }
+
+    public function projet()
+    {
+        return $this->belongTo(Projet::class);
+    }
+
+    public function user()
+    {
+        return $this->belongTo(User::class);
     }
 }

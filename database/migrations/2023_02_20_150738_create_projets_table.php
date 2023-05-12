@@ -18,8 +18,8 @@ class CreateProjetsTable extends Migration
             $table->string('nomP')->unique();
             $table->text('descriptionP');
             $table->string('budjetP');
-            $table->string('date_debut');
-            $table->string('date_fin');
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->timestamps();
         });
     }

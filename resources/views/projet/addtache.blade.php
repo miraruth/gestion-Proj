@@ -134,21 +134,18 @@
               </div>
             </nav>
         </div>
-
-            <div class="page-content">
+<form action="" method="post">
+<div class="page-content">
                     <div class="row">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Ajouter une tache</h5>
                                     <p class="card-description">remplissez tout les champs.</p>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1">@</span>
-                                        <input type="text" class="form-control" placeholder="nomutilisateur" aria-label="Nom d'utilisateur" aria-describedby="basic-addon1">
-                                      </div>
+
                                     <div class="mb-3">
                                           <label for="exampleInputEmail1" class="form-label">titre de la tache</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                          <input type="email" class="form-control" name="nomT" aria-describedby="emailHelp">
                                           
                                     </div>
                                     <div class="card-body">
@@ -162,13 +159,22 @@
                                       </select>
                                       <div class="input-group">
                                         <span class="input-group-text">Description de la tache</span>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        <textarea class="form-control" aria-label="With textarea" name="descriptionT"></textarea>
                                       </div>
                                       <div>
-                                        <label for="formFileLg" class="form-label">Inclure un fichier</label>
-                                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                        <label for="formFileLg" class="form-label">budjet de la tache</label>
+                                        <input class="form-control form-control-lg" id="formFileLg" name="budjetT" type="text">
                                       </div>
+
+                                      <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Date de debut de la tache</label>
+                                          <input type="date" class="form-control" name="date_debut" aria-describedby="emailHelp">
+                                          
+                                    </div>
+
                                         <button type="submit" class="btn btn-primary">Enregister</button>
+
+
                                 </div>
                             </div>
                         </div>
@@ -182,5 +188,7 @@
               
             </div>
         
+</form>
+
   
 @endsection

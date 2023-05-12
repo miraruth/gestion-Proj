@@ -17,4 +17,9 @@ class Document extends Model
         'typeD',
         'date_mise_a_jour',
     ];
+
+    public function projet()
+    {
+        return $this->belongTo(Projet::class);
+    }
 }

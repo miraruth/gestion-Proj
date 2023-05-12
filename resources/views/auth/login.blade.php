@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('head')
+
+@extends('common.template')
+@section('contenu')
+
     <body class="login-page">
         <div class='loader'>
             <div class='spinner-grow text-primary' role='status'>
@@ -40,7 +41,7 @@
                                 </div>
                                 <div class="d-grid">
                                 <button type="submit" class="btn btn-info m-b-xs">Connexion</button>
-                                <button class="btn btn-primary">Facebook</button>
+                               
                             </div>
                               </form>
        
@@ -49,8 +50,4 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Javascripts -->
-@include('footer')
-    </body>
-</html>
+ @endsection

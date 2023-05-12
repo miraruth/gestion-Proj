@@ -134,31 +134,44 @@
               </div>
             </nav>
         </div>
-
-            <div class="page-content">
+<form action="projetStore" method="Post">
+@csrf
+  <div class="page-content">
                     <div class="row">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Ajouter un projet</h5>
                                     <p class="card-description">remplissez tout les champs.</p>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1">@</span>
-                                        <input type="text" class="form-control" placeholder="nomutilisateur" aria-label="Nom d'utilisateur" aria-describedby="basic-addon1">
-                                      </div>
+                          
                                     <div class="mb-3">
                                           <label for="exampleInputEmail1" class="form-label">titre du projet</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                          <input type="text" class="form-control" name="nomP" aria-describedby="emailHelp">
                                           
                                     </div>
                                       <div class="input-group">
                                         <span class="input-group-text">Description du projet</span>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        <textarea class="form-control" aria-label="With textarea" name ="descriptionP"></textarea>
                                       </div>
-                                      <div>
-                                        <label for="formFileLg" class="form-label">Inclure un fichier</label>
-                                        <input class="form-control form-control-lg" id="formFileLg" type="file">
-                                      </div>
+                                                                            
+                                      <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Budjet du projet</label>
+                                          <input type="text" class="form-control" name="budjetP" aria-describedby="emailHelp">
+                                          
+                                    </div>
+
+                                      <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Date debut</label>
+                                          <input type="date" class="form-control" name="date_debut" aria-describedby="emailHelp">
+                                          
+                                    </div>
+
+                                    <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Date fin</label>
+                                          <input type="date" class="form-control" name="date_fin" aria-describedby="emailHelp">
+                                          
+                                    </div>
+                             
                                         <button type="submit" class="btn btn-primary">Enregister</button>
                                 </div>
                             </div>
@@ -173,5 +186,7 @@
               
             </div>
         
+</form>
+
   
 @endsection

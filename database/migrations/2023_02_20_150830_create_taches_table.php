@@ -19,7 +19,6 @@ class CreateTachesTable extends Migration
             $table->text('descriptionT');
             $table->string('budjetT');
             $table->date('date_debut');
-            $table->date('date_fin');
             $table->timestamps();
         });
     }
